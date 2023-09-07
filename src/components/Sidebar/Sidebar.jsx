@@ -14,7 +14,7 @@ const Sidebar = () => {
             <nav>
                 <ul className={styles.menu}>
                     {list.map(({ id, name }) => (
-                        <li>
+                        <li key={id}>
                             <NavLink
                                 className={({ isActive }) =>
                                     `${styles.link} ${isActive ? styles.active : ""}`
