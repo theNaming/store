@@ -14,8 +14,8 @@ const SingleProduct = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const navigate = useNavigate();
-    const { list, related } = useSelector(({ products }) => products);
 
+    const { list, related } = useSelector(({ products }) => products);
     const { data, isLoading, isFetching, isSuccess } = useGetProductQuery({ id });
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const SingleProduct = () => {
             navigate(ROUTES.HOME);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [isLoading, isFetching, isSuccess]);
+    }, [isLoading, isFetching, isSuccess]); 
 
     useEffect(() => {
         if (!data || !list.length) return;
